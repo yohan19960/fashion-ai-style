@@ -1,13 +1,21 @@
-import { Search, Scan, Calendar, Package, ArrowRight } from 'lucide-react';
+import { Search, Scan, Calendar, Package, ArrowRight, Clock, Bookmark } from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 import { StyleChip } from '@/components/StyleChip';
 import { ProductCard } from '@/components/ProductCard';
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { useNavigate } from 'react-router-dom';
 import sneakersImage from '@/assets/sneakers-white.jpg';
 import toteImage from '@/assets/tote-bag-beige.jpg';
 import crossbodyImage from '@/assets/crossbody-khaki.jpg';
 import beltImage from '@/assets/belt-brown.jpg';
 
 export default function HomePage() {
+  const navigate = useNavigate();
+  
+  const handleStyleClick = (style: string) => {
+    navigate('/stylist', { state: { selectedStyle: style } });
+  };
+
   const styleCapsules = [
     "Interview Outfit < RM500",
     "City-Weekend Capsule", 
@@ -55,16 +63,25 @@ export default function HomePage() {
       <div className="mobile-page pt-4 space-y-6">
         {/* Welcome & Style Plans */}
         <section>
-          <div className="mb-4">
-            <h2 className="text-xl font-bold text-text-primary">Welcome back</h2>
-            <p className="text-lg text-text-secondary">Let's plan your next look</p>
-          </div>
-          
-          <div className="flex overflow-x-auto space-x-3 pb-2">
-            {styleCapsules.map((capsule, index) => (
-              <StyleChip key={index}>{capsule}</StyleChip>
-            ))}
-          </div>
+          <Card className="bg-card">
+            <CardHeader>
+              <h2 className="text-xl font-bold text-text-primary">Welcome back</h2>
+              <p className="text-lg text-text-secondary">Let's plan your next look</p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-1">
+                {styleCapsules.map((capsule, index) => (
+                  <StyleChip 
+                    key={index} 
+                    className="w-full flex justify-center items-center text-center"
+                    onClick={() => handleStyleClick(capsule)}
+                  >
+                    {capsule}
+                  </StyleChip>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         {/* Search Bar */}
@@ -92,7 +109,7 @@ export default function HomePage() {
             </div>
             
             <div className="alert-card">
-              <Package size={20} className="text-info flex-shrink-0" />
+              <Bookmark size={20} className="text-info flex-shrink-0" />
               <div>
                 <p className="text-sm font-medium text-text-primary">Mini Crossbody (Khaki)</p>
                 <p className="text-xs text-text-muted">Watchlist</p>

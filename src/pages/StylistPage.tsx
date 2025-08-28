@@ -1,7 +1,14 @@
 import { AppHeader } from '@/components/AppHeader';
 import { StyleChip } from '@/components/StyleChip';
+import { useLocation } from 'react-router-dom';
 
 export default function StylistPage() {
+  const location = useLocation();
+  const selectedStyle = location.state?.selectedStyle;
+
+  // If there's a selected style, use it as initial value
+  const initialText = selectedStyle || '';
+
   const scenarios = [
     "Interview < RM500",
     "Monochrome streetwear", 
@@ -49,6 +56,7 @@ export default function StylistPage() {
                   <textarea
                     placeholder="Describe your look…"
                     rows={4}
+                    defaultValue={initialText}
                     className="w-full p-4 bg-input border border-border rounded-xl text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none"
                   />
                 </div>

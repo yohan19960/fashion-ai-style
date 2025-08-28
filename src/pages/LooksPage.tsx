@@ -1,4 +1,14 @@
-import { Palette, DollarSign, Calendar, Sparkles } from 'lucide-react';
+import React from 'react';
+import { 
+  Palette, 
+  DollarSign, 
+  Calendar, 
+  Sparkles, 
+  Briefcase, 
+  Heart, 
+  Plane,
+  ArrowRight
+} from 'lucide-react';
 import { AppHeader } from '@/components/AppHeader';
 import { StyleChip } from '@/components/StyleChip';
 import { ProductCard } from '@/components/ProductCard';
@@ -8,9 +18,10 @@ import crossbodyImage from '@/assets/crossbody-khaki.jpg';
 
 export default function LooksPage() {
   const filterChips = [
-    { label: "Warm neutrals", icon: Palette },
-    { label: "Under RM800", icon: DollarSign },
-    { label: "Casual chic", icon: Calendar }
+    { label: "Warm neutrals" },
+    { label: "Under RM800" },
+    { label: "Casual Weekend" },
+    { label: "Office Style" }
   ];
 
   const outfitCollections = [
@@ -67,20 +78,19 @@ export default function LooksPage() {
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-sm font-semibold text-text-primary mb-3">Filters</h3>
                 <div className="flex flex-wrap gap-2">
                   {filterChips.map((chip, index) => (
-                    <div key={index} className="flex items-center space-x-2">
-                      <StyleChip icon={false}>
-                        <chip.icon size={14} className="mr-1" />
-                        {chip.label}
-                      </StyleChip>
-                    </div>
+                    <StyleChip 
+                      key={index}
+                      className="flex items-center space-x-2"
+                    >
+                      {chip.label}
+                    </StyleChip>
                   ))}
                 </div>
               </div>
               
-              <button className="w-full fashion-button-primary py-4 text-lg font-semibold">
+              <button className="w-full fashion-button-primary py-2 text-lg font-semibold">
                 Generate Look
               </button>
               
@@ -93,34 +103,45 @@ export default function LooksPage() {
 
         {/* Outfit Collections */}
         <section>
-          <h3 className="text-lg font-bold text-text-primary mb-4">Curated Collections</h3>
-          
-          <div className="space-y-6">
-            {outfitCollections.map((collection, collectionIndex) => (
-              <div key={collectionIndex} className="fashion-card p-4 space-y-4">
+        <h3 className="text-lg font-bold text-text-primary mb-4">Curated Collections</h3>
+        
+        <div className="space-y-6">
+          {outfitCollections.map((collection, collectionIndex) => (
+            <div key={collectionIndex} className="fashion-card p-4 space-y-4">
+              <div className="flex justify-between items-start">
                 <div>
                   <h4 className="text-lg font-bold text-text-primary">{collection.title}</h4>
                   <p className="text-sm text-text-muted">{collection.subtitle}</p>
                 </div>
-                
-                <div className="flex overflow-x-auto space-x-4 pb-2">
-                  {collection.items.map((item, itemIndex) => (
-                    <ProductCard
-                      key={itemIndex}
-                      {...item}
-                      onAdd={() => console.log('Add to cart:', item.name)}
-                      className="min-w-[150px]"
-                    />
-                  ))}
-                </div>
-                
-                <button className="w-full fashion-button-primary py-3 font-semibold">
-                  Add look to bag
+                <button 
+                  onClick={() => console.log('More like:', collection.title)}
+                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full
+                    bg-primary hover:bg-primary-dark transition-colors duration-200"
+                  title="More like this"
+                >
+                  <Sparkles size={12} className="text-white" />
+                  <span className="text-white text-xs font-medium">Discover More</span>
                 </button>
               </div>
-            ))}
-          </div>
-        </section>
+              
+              <div className="flex overflow-x-auto space-x-4 pb-2">
+                {collection.items.map((item, itemIndex) => (
+                  <ProductCard
+                    key={itemIndex}
+                    {...item}
+                    onAdd={() => console.log('Add to cart:', item.name)}
+                    className="min-w-[150px]"
+                  />
+                ))}
+              </div>
+              
+              <button className="w-full fashion-button-primary py-3 font-semibold">
+                Add look to bag
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
 
         {/* Style Inspiration */}
         <section>
@@ -128,14 +149,17 @@ export default function LooksPage() {
           
           <div className="grid grid-cols-2 gap-3">
             {[
-              { title: "Office Ready", count: "12 looks" },
-              { title: "Weekend Vibes", count: "8 looks" },
-              { title: "Date Night", count: "15 looks" },
-              { title: "Travel Essentials", count: "6 looks" }
+              { title: "Office Ready", count: "12 looks", icon: Briefcase },
+              { title: "Weekend Vibes", count: "8 looks", icon: Calendar },
+              { title: "Date Night", count: "15 looks", icon: Heart },
+              { title: "Travel Essentials", count: "6 looks", icon: Plane }
             ].map((inspiration, index) => (
               <div key={index} className="fashion-card p-4 text-center space-y-2">
                 <div className="w-12 h-12 rounded-xl bg-accent-gold-muted mx-auto flex items-center justify-center">
-                  <Sparkles size={20} className="text-accent-gold" />
+                  {React.createElement(inspiration.icon, {
+                    size: 20,
+                    className: "text-accent-gold"
+                  })}
                 </div>
                 <div>
                   <h4 className="font-semibold text-text-primary text-sm">{inspiration.title}</h4>
