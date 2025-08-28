@@ -40,12 +40,19 @@ export default {
 					muted: 'hsl(var(--secondary-muted))'
 				},
 				
-				// Fashion accent colors
+				// Luxury & Glam accent colors
 				'accent-gold': {
 					DEFAULT: 'hsl(var(--accent-gold))',
 					muted: 'hsl(var(--accent-gold-muted))'
 				},
 				'accent-warm': 'hsl(var(--accent-warm))',
+				
+				// Luxury specific colors
+				'luxury-black': 'hsl(30 15% 8%)',
+				'luxury-gold': 'hsl(45 100% 70%)',
+				'luxury-rose-gold': 'hsl(25 90% 65%)',
+				'luxury-purple': 'hsl(280 25% 25%)',
+				'luxury-cream': 'hsl(45 20% 95%)',
 				
 				// Text hierarchy
 				'text-primary': 'hsl(var(--text-primary))',
