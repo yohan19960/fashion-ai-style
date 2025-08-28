@@ -24,44 +24,70 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// App specific colors
+				'app-background': 'hsl(var(--app-background))',
+				'section-background': 'hsl(var(--section-background))',
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					muted: 'hsl(var(--primary-muted))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					muted: 'hsl(var(--secondary-muted))'
 				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive))',
-					foreground: 'hsl(var(--destructive-foreground))'
+				
+				// Fashion accent colors
+				'accent-gold': {
+					DEFAULT: 'hsl(var(--accent-gold))',
+					muted: 'hsl(var(--accent-gold-muted))'
 				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+				'accent-warm': 'hsl(var(--accent-warm))',
+				
+				// Text hierarchy
+				'text-primary': 'hsl(var(--text-primary))',
+				'text-secondary': 'hsl(var(--text-secondary))',
+				'text-muted': 'hsl(var(--text-muted))',
+				
+				// Interactive elements
+				'button-primary': {
+					DEFAULT: 'hsl(var(--button-primary))',
+					hover: 'hsl(var(--button-primary-hover))'
 				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
-				},
+				'button-secondary': 'hsl(var(--button-secondary))',
+				'button-outline': 'hsl(var(--button-outline))',
+				
+				// Chips and pills
+				'chip-background': 'hsl(var(--chip-background))',
+				'chip-foreground': 'hsl(var(--chip-foreground))',
+				'chip-active': 'hsl(var(--chip-active))',
+				'chip-active-foreground': 'hsl(var(--chip-active-foreground))',
+				
+				// Fashion specific
+				'price-color': 'hsl(var(--price-color))',
+				'discount-color': 'hsl(var(--discount-color))',
+				'tag-background': 'hsl(var(--tag-background))',
+				'loyalty-gold': 'hsl(var(--loyalty-gold))',
+				
+				// Status colors
+				success: 'hsl(var(--success))',
+				warning: 'hsl(var(--warning))',
+				error: 'hsl(var(--error))',
+				info: 'hsl(var(--info))',
+				
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+					foreground: 'hsl(var(--card-foreground))',
+					shadow: 'hsl(var(--card-shadow))'
 				}
+			},
+			boxShadow: {
+				'card': 'var(--shadow-card)',
+				'chip': 'var(--shadow-chip)',
+				'floating': 'var(--shadow-floating)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
