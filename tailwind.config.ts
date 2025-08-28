@@ -40,19 +40,19 @@ export default {
 					muted: 'hsl(var(--secondary-muted))'
 				},
 				
-				// Luxury & Glam accent colors
+				// iOS Glassmorphism accent colors
 				'accent-gold': {
 					DEFAULT: 'hsl(var(--accent-gold))',
 					muted: 'hsl(var(--accent-gold-muted))'
 				},
 				'accent-warm': 'hsl(var(--accent-warm))',
 				
-				// Luxury specific colors
-				'luxury-black': 'hsl(30 15% 8%)',
-				'luxury-gold': 'hsl(45 100% 70%)',
-				'luxury-rose-gold': 'hsl(25 90% 65%)',
-				'luxury-purple': 'hsl(280 25% 25%)',
-				'luxury-cream': 'hsl(45 20% 95%)',
+				// iOS specific colors
+				'ios-blue': 'hsl(212 100% 50%)',
+				'ios-gray': 'hsl(220 15% 95%)',
+				'ios-light-gray': 'hsl(220 10% 90%)',
+				'glass-white': 'hsl(0 0% 100% / 0.7)',
+				'glass-border': 'hsl(220 20% 85% / 0.3)',
 				
 				// Text hierarchy
 				'text-primary': 'hsl(var(--text-primary))',

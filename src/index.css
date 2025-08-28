@@ -2,94 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ShopAble Fashion Design System - Luxury & Glam Mobile Fashion App */
+/* ShopAble Fashion Design System - Glassmorphism iOS Mobile Fashion App */
 
 @layer base {
   :root {
-    /* Core Brand Colors - Luxury Black & Cream */
-    --background: 30 15% 8%;
-    --foreground: 45 20% 95%;
+    /* Core Brand Colors - iOS Clean */
+    --background: 220 20% 98%;
+    --foreground: 220 15% 15%;
 
-    /* Card System - Deep Black with Gold Edges */
-    --card: 30 12% 12%;
-    --card-foreground: 45 20% 95%;
-    --card-shadow: 0 0% 0%;
+    /* Card System - Glassmorphism */
+    --card: 0 0% 100% / 0.7;
+    --card-foreground: 220 15% 15%;
+    --card-shadow: 220 20% 80%;
 
-    /* App Background - Rich Gradient */
-    --app-background: 30 15% 8%;
-    --section-background: 30 12% 12%;
+    /* App Background - iOS Gradient */
+    --app-background: 220 20% 98%;
+    --section-background: 0 0% 100% / 0.6;
 
-    /* Brand Primary - Luxurious Deep Black */
-    --primary: 30 15% 8%;
-    --primary-foreground: 45 35% 85%;
-    --primary-muted: 30 10% 20%;
+    /* Brand Primary - iOS Blue */
+    --primary: 212 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 212 50% 85%;
 
-    /* Luxury Gold & Rose Gold Accents */
-    --accent-gold: 45 100% 70%;
-    --accent-gold-muted: 45 60% 90%;
-    --accent-warm: 25 90% 65%;
+    /* iOS Accent Colors */
+    --accent-gold: 45 100% 60%;
+    --accent-gold-muted: 45 30% 95%;
+    --accent-warm: 25 80% 65%;
 
-    /* Secondary Luxury Tones - Deep Purple */
-    --secondary: 280 25% 25%;
-    --secondary-foreground: 45 20% 95%;
-    --secondary-muted: 280 15% 35%;
+    /* Secondary iOS Tones */
+    --secondary: 220 15% 95% / 0.8;
+    --secondary-foreground: 220 15% 25%;
+    --secondary-muted: 220 10% 90% / 0.6;
 
-    /* Text Hierarchy - Gold & Cream */
-    --text-primary: 45 20% 95%;
-    --text-secondary: 45 15% 75%;
-    --text-muted: 45 10% 60%;
+    /* Text Hierarchy - iOS Typography */
+    --text-primary: 220 15% 15%;
+    --text-secondary: 220 10% 45%;
+    --text-muted: 220 8% 65%;
 
-    /* Interactive Elements - Gold Gradients */
-    --button-primary: 45 100% 70%;
-    --button-primary-hover: 35 100% 65%;
-    --button-secondary: 280 25% 25%;
-    --button-outline: 45 30% 50%;
+    /* Interactive Elements - iOS Style */
+    --button-primary: 212 100% 50%;
+    --button-primary-hover: 212 100% 45%;
+    --button-secondary: 220 15% 95% / 0.8;
+    --button-outline: 220 20% 85% / 0.6;
 
-    /* Luxury Chip/Pill Colors */
-    --chip-background: 280 20% 20%;
-    --chip-foreground: 45 20% 90%;
-    --chip-active: 45 100% 70%;
-    --chip-active-foreground: 30 15% 10%;
+    /* iOS Chip/Pill Colors */
+    --chip-background: 220 15% 95% / 0.8;
+    --chip-foreground: 220 15% 25%;
+    --chip-active: 212 100% 50%;
+    --chip-active-foreground: 0 0% 100%;
 
-    /* Status & Alerts - Luxury Palette */
-    --success: 140 60% 55%;
-    --warning: 45 100% 65%;
-    --error: 355 85% 60%;
-    --info: 280 60% 65%;
+    /* Status & Alerts - iOS System Colors */
+    --success: 142 76% 36%;
+    --warning: 48 89% 50%;
+    --error: 355 78% 60%;
+    --info: 212 100% 50%;
 
-    /* Fashion Specific - Glamorous Colors */
-    --price-color: 45 100% 70%;
-    --discount-color: 355 85% 60%;
-    --tag-background: 280 15% 18%;
-    --loyalty-gold: 45 100% 75%;
+    /* Fashion Specific - iOS Clean */
+    --price-color: 220 15% 15%;
+    --discount-color: 355 78% 60%;
+    --tag-background: 220 10% 92% / 0.8;
+    --loyalty-gold: 45 100% 60%;
 
-    /* Luxury Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(30 15% 8%), hsl(280 20% 15%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 100% 70%), hsl(25 90% 65%));
-    --gradient-warm: linear-gradient(135deg, hsl(25 90% 65%), hsl(15 85% 60%));
-    --gradient-app: linear-gradient(180deg, hsl(30 15% 8%), hsl(280 20% 12%));
+    /* Glassmorphism Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(212 100% 50% / 0.9), hsl(220 100% 60% / 0.8));
+    --gradient-gold: linear-gradient(135deg, hsl(45 100% 60% / 0.9), hsl(25 80% 65% / 0.8));
+    --gradient-warm: linear-gradient(135deg, hsl(25 80% 65% / 0.9), hsl(15 75% 60% / 0.8));
+    --gradient-app: linear-gradient(135deg, hsl(220 20% 98%), hsl(212 30% 95%));
 
-    /* Luxury Shadows with Gold Glow */
-    --shadow-card: 0 8px 32px hsl(45 100% 50% / 0.15);
-    --shadow-chip: 0 4px 16px hsl(45 80% 60% / 0.20);
-    --shadow-floating: 0 16px 64px hsl(45 100% 50% / 0.25);
+    /* Glassmorphism Shadows */
+    --shadow-card: 0 8px 32px hsl(220 20% 20% / 0.08);
+    --shadow-chip: 0 4px 16px hsl(220 20% 20% / 0.06);
+    --shadow-floating: 0 16px 64px hsl(220 20% 20% / 0.12);
 
-    /* Border & Input - Luxury Gold Accents */
-    --border: 45 50% 30%;
-    --input: 280 20% 20%;
-    --ring: 45 100% 70%;
+    /* Border & Input - iOS Clean */
+    --border: 220 20% 85% / 0.3;
+    --input: 220 15% 95% / 0.8;
+    --ring: 212 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Sidebar - Luxury Theme */
-    --sidebar-background: 30 12% 12%;
-    --sidebar-foreground: 45 20% 90%;
-    --sidebar-primary: 45 100% 70%;
-    --sidebar-primary-foreground: 30 15% 10%;
-    --sidebar-accent: 280 20% 20%;
-    --sidebar-accent-foreground: 45 20% 90%;
-    --sidebar-border: 45 30% 25%;
-    --sidebar-ring: 45 100% 70%;
+    /* Sidebar - iOS Glassmorphism */
+    --sidebar-background: 0 0% 100% / 0.8;
+    --sidebar-foreground: 220 15% 15%;
+    --sidebar-primary: 212 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 95% / 0.6;
+    --sidebar-accent-foreground: 220 15% 25%;
+    --sidebar-border: 220 20% 85% / 0.3;
+    --sidebar-ring: 212 100% 50%;
   }
 
   .dark {
@@ -143,28 +143,28 @@
 }
 
 @layer components {
-  /* Fashion App Components */
+  /* Glassmorphism iOS App Components */
   .fashion-card {
-    @apply bg-card rounded-xl shadow-card border border-border;
+    @apply bg-card rounded-2xl shadow-card border border-border backdrop-blur-xl;
   }
 
   .fashion-chip {
     @apply bg-chip-background text-chip-foreground px-4 py-2 rounded-full text-sm font-medium 
-           shadow-chip transition-all duration-200 hover:shadow-md;
+           shadow-chip transition-all duration-200 hover:shadow-md backdrop-blur-sm;
   }
 
   .fashion-chip-active {
-    @apply bg-chip-active text-chip-active-foreground;
+    @apply bg-chip-active text-chip-active-foreground backdrop-blur-sm;
   }
 
   .fashion-button-primary {
-    @apply bg-button-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold
-           transition-all duration-200 hover:bg-button-primary-hover active:scale-95;
+    @apply bg-button-primary text-primary-foreground px-6 py-3 rounded-2xl font-semibold
+           transition-all duration-200 hover:bg-button-primary-hover active:scale-95 backdrop-blur-sm;
   }
 
   .fashion-button-secondary {
-    @apply bg-button-secondary text-secondary-foreground px-6 py-3 rounded-xl font-medium
-           border border-button-outline transition-all duration-200 hover:shadow-md;
+    @apply bg-button-secondary text-secondary-foreground px-6 py-3 rounded-2xl font-medium
+           border border-button-outline transition-all duration-200 hover:shadow-md backdrop-blur-xl;
   }
 
   .fashion-price {
@@ -193,7 +193,7 @@
 
   .bottom-nav {
     @apply fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-sm
-           bg-card border-t border-border px-4 py-2 z-50;
+           bg-card border-t border-border px-4 py-2 z-50 backdrop-blur-xl;
   }
 
   .product-card {
@@ -202,5 +202,22 @@
 
   .alert-card {
     @apply fashion-card p-4 flex items-center space-x-3;
+  }
+
+  /* iOS Glassmorphism Specific Classes */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg;
+  }
+  
+  .glass-nav {
+    @apply bg-white/80 backdrop-blur-2xl border-t border-white/20;
+  }
+  
+  .glass-button {
+    @apply bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl hover:bg-white/30 transition-all duration-200;
+  }
+  
+  .glass-input {
+    @apply bg-white/60 backdrop-blur-sm border border-white/30 rounded-xl placeholder:text-gray-500;
   }
 }
