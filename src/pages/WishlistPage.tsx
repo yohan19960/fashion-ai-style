@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Search, Filter, Heart, ShoppingCart, Trash2, Bell, FolderPlus, Share2, CheckSquare, Square } from 'lucide-react';
+import { ArrowLeft, Search, Filter, Heart, ShoppingCart, Trash2, FolderPlus, Share2, CheckSquare, Square } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -19,7 +19,6 @@ interface WishlistItem {
   discount?: number;
   stockStatus: 'in-stock' | 'out-of-stock' | 'low-stock';
   onSale?: boolean;
-  notifyEnabled?: boolean;
   tags?: string[];
 }
 
@@ -46,7 +45,6 @@ const mockWishlistItems: WishlistItem[] = [
     originalPrice: 219,
     discount: 14,
     stockStatus: 'low-stock',
-    notifyEnabled: true,
     tags: ['accessories']
   },
   {
@@ -56,7 +54,6 @@ const mockWishlistItems: WishlistItem[] = [
     image: toteImage,
     currentPrice: 359,
     stockStatus: 'out-of-stock',
-    notifyEnabled: true,
     tags: ['work', 'formal']
   }
 ];
@@ -357,12 +354,6 @@ export default function WishlistPage() {
                       {getStockStatusText(item.stockStatus)}
                     </Badge>
 
-                    {/* Notification Status */}
-                    {item.notifyEnabled && (
-                      <Badge className="mt-1 text-xs bg-info/10 text-info">
-                        📩 You'll be notified
-                      </Badge>
-                    )}
                   </div>
                 </div>
 
@@ -393,10 +384,6 @@ export default function WishlistPage() {
                     <Button variant="ghost" size="sm" className="text-xs text-text-muted">
                       <FolderPlus size={12} className="mr-1" />
                       Move to Folder
-                    </Button>
-                    <Button variant="ghost" size="sm" className="text-xs text-text-muted">
-                      <Bell size={12} className="mr-1" />
-                      Notify me
                     </Button>
                   </div>
 
