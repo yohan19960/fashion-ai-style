@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, Search, Filter, Heart, ShoppingCart, Trash2, FolderPlus, Share2, CheckSquare, Square } from 'lucide-react';
+import { ArrowLeft, Search, Filter, Heart, ShoppingCart, Trash2, FolderPlus, Share2, CheckSquare, Square, Star, ArrowUpDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -387,14 +387,27 @@ export default function WishlistPage() {
                     </Button>
                   </div>
 
-                  {/* Row 3: Recommendations */}
+                  {/* Style Optimizer */}
                   <div className="pt-2 border-t border-border">
-                    <p className="text-xs text-text-muted mb-2">Because you saved this, you may also like...</p>
-                    <div className="flex space-x-2 overflow-x-auto">
-                      {/* Mini suggestion thumbnails */}
-                      <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-md"></div>
-                      <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-md"></div>
-                      <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-md"></div>
+                    <div className="flex items-center space-x-2 mb-3">
+                      <Star size={14} className="text-accent fill-current" />
+                      <h4 className="font-medium text-text-primary text-sm">Style Optimizer</h4>
+                    </div>
+                    <div className="p-3 bg-secondary/30 rounded-lg">
+                      <p className="text-xs text-text-secondary mb-2">
+                        Complete your look with matching accessories
+                      </p>
+                      <div className="flex space-x-2 overflow-x-auto">
+                        <div className="flex-shrink-0 w-16 h-16 bg-secondary rounded-md flex items-center justify-center">
+                          <span className="text-xs text-text-muted">Belt</span>
+                        </div>
+                        <div className="flex-shrink-0 w-16 h-16 bg-secondary rounded-md flex items-center justify-center">
+                          <span className="text-xs text-text-muted">Watch</span>
+                        </div>
+                        <button className="flex-shrink-0 w-16 h-16 border-2 border-dashed border-border rounded-md flex items-center justify-center text-text-muted hover:border-primary transition-colors">
+                          <span className="text-xs">+</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
